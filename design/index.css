@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    padding: 2% 0 0;
+    background: rgb(160, 24, 24);
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    width: 760px;
+    margin: 0 auto;
+    border: 1px solid #999
+}
+
+#header {
+    background: url(images/backgrounds/dota2heroesbanner.jpg) no-repeat;
+    width: 760px;
+    height: 158px;
+}
+
+#nav {
+    background: url(images/backgrounds/Fire.png) repeat-x;
+    color: #f00;
+    font-size: 80%;
+    font-weight: bold;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+#nav ul {
+    list-style-type: none;
+}
+
+#nav li {
+    display: inline;
+    margin: 0 8px;
+}
+
+#nav li a {
+    color: #000000;
+}
+
+#nav li a:hover {
+    color: #f00;
+}
+
+a {
+    text-decoration: none;
+}
+
+#text {
+    width: 545px;
+    font-size: .8em;
+    color: #333;
+    margin: 10px auto;
+    float: left;
+}
+
+#text p {
+    text-align: justify;
+    text-indent: 1.5em;
+    margin: 0;
+    padding: 0 15px;
+}
+
+#text a {
+    color: #396;
+}
+
+#text a:hover {
+    color: #f36;
+    border-bottom: #f36 dotted 8px;
+}
+
+.img1 {
+    width: 200px;
+    height: 287px;
+    margin: 0 0 0 15px;
+    float: right;
+}
+
+.img2 {
+    width: 200px;
+    height: 200px;
+    margin: 10px 15px 0 15px;
+    float: left;
+}
+
+.poloska {
+    width: 300px;
+    height: 23px;
+    margin: 10px 10px 0 15px;
+    float: left;
+}
+
+#members {
+    width: 300px;
+    height: 100px;
+    float: right;
+}
+
+#members h2 {
+    color: #f60;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#members ol {
+    color: #999;
+    font-size: 120%;
+    margin: 10px;
+    float: left;
+    list-style-type: none;
+}
+
+#members li {
+    margin: 0 5px;
+}
+
+#members li a {
+    color: #0066CC;
+}
+
+#members li a:hover {
+    color: #0066CC;
+}
+
+#news {
+    background: #ffc;
+    width: 185px;
+    color: #665;
+    margin: 10px 5px;
+    float: right;
+}
+
+#news h3 {
+    color: #f60;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#news ul {
+    list-style: url(Pic/marker.jpg) inside;
+}
+
+#news li {
+    font-size: 75%;
+    padding: 5px 10px;
+}
+
+#footer {
+    background: #0066CC;
+    color: #fff;
+    font-size: 70%;
+    padding: 5px;
+    clear: both;
+}
+
+#footer a {
+    color: #ff0;
+}
+
+#footer a:hover {
+    color: #f00;
+}
+
+#footer p {
+    padding: 2px;
+    text-align: center;
+}
+
+.clearfloat {
+    clear: both;
+}
