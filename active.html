@@ -4,102 +4,163 @@
 <head>
   <title>Асуна-молния - Активность в Dota 2</title>
   <base target="_blank" />
+  <style type="text/css">
+    .header {
+      width: 100%;
+      height: 60px;
+      /* background-color: #717dc9; */
+      background-image: linear-gradient( rgba(83, 196, 248, 0.45),
+      rgba(5, 75, 253, 0.836)),
+      url("images/backgrounds/Fire.png");
+      background-size: contain;
+      background-repeat: repeat;
+      padding: 20px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(3, 3, 163);
+    }
+
+    .main_menu {
+      width: 120px;
+      height: 460px;
+      background-color: #9900ff;
+      padding: 15px;
+      vertical-align: top;
+    }
+
+    .content {
+      width: 500px;
+      background-color: rgb(26, 63, 163);
+      padding: 15px;
+      vertical-align: top;
+    }
+
+    .info {
+      width: 120px;
+      background-color: #5f2991;
+      padding: 15px;
+      vertical-align: top;
+      color: darkorange;
+    }
+
+    .footer {
+      width: 100%;
+      padding: 10px 0 10px 20px;
+      background-image: linear-gradient(rgba(0, 69, 243, 0.836), rgba(83, 196, 248, 0.45));
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body bgcolor="#2F4F4F" text="white" link="snow" alink="white" vlink="red">
-  <font face="Arial">
-    <h1>Активность игрока</h1>
-    <img src="images/ava/avatarAsuna.jpg" height="100" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10"
-      border="1" />
-    <img src="images/ava/avatar.jpg" width="10%" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10" border="1"
-    />
-    <img src="images/ava/avatar.jpg" width="5%" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10" border="1"
-    />
-    <h1>Асуна-молния</h1>
-    <b>Доля Побед: 55%</b>
-    <br>
-    <br>
-    <a href="index.html" target="_self">Обзор</a>
-    <a href="matches.html">Матчи</a>
-    <a href="twitch.html">Любимые стримы</a>
-    <a href="hero_records.html">Рекорды</a>
-    <a href="things.html">Предметы</a>
-    <a href="stata.html">Статистика</a>
-    <a href="active.html">Активность</a>
-    <br>
-    <br>
+  <table cellpadding="0" cellspacing="0" width="100%" align="center">
+    <tr>
+      <td colspan="3" class="header">
+        <!-- header -->
+        <h1>Активность игрока</h1>
+      </td>
+    </tr>
+    <tr>
+      <td class="main_menu">
+        <!-- main_menu -->
+        <a href="index.html">Обзор</a>
+        <a href="matches.html">Матчи</a>
+        <a href="twitch.html">Любимые стримы</a>
+        <a href="hero_records.html">Рекорды</a>
+        <a href="things.html">Предметы</a>
+        <a href="stata.html">Статистика</a>
+        <a href="active.html">Активность</a>
+      </td>
+      <td class="content">
+        <!-- content -->
+        <table border="3" bordercolor="red">
+          <caption>Активность по дням</caption>
+          <tr>
+            <th>День недели</th>
+            <th>Количество минут на катку в среднем</th>
+            <th>Количество каток</th>
+          </tr>
+          <tr>
+            <th>Понедельник</th>
+            <th>33</th>
+            <th>3</th>
+          </tr>
+          <tr>
+            <th>Вторник</th>
+            <th>45</th>
+            <th>2</th>
+          </tr>
+          <tr>
+            <th>Среда</th>
+            <th>24</th>
+            <th>5</th>
+          </tr>
+          <tr>
+            <th>Четверг</th>
+            <th>40</th>
+            <th>2</th>
+          </tr>
+          <tr>
+            <th>Пятница</th>
+            <th>25</th>
+            <th>5</th>
+          </tr>
+          <tr>
+            <th>Суббота</th>
+            <th>34</th>
+            <th>6</th>
+          </tr>
+          <tr>
+            <th>Воскресенье</th>
+            <th>27</th>
+            <th>3</th>
+          </tr>
+          <tr>
+            <th>Суммарно:</th>
+            <th>29</th>
+            <th>4</th>
+          </tr>
+        </table>
+        <h2>Коротко о дотерском сленге</h2>
+        <dl>
+          <dt>Frag (Килл, Фраг)</dt>
+          <dd>Очко за убийство вражеского героя.</dd>
+          <dt>Frag Stealing/Kill Stealing (Фраг/килл стилинг, steal/стил)</dt>
+          <dd>Добивание героя противника с явным намерением украсть фраг у союзника, имеющего возможность убить этого же героя.</dd>
+          <dt>Gank (Ганк) - Go around ANd Kill</dt>
+          <dd>Объединение нескольких героев для быстрого и неожиданного убийства одного или нескольких героев.</dd>
+          <dt>Ganker (Ганкер)</dt>
+          <dd>Герой, который эффективно используется в ганках.</dd>
+          <dt>GG (Good Game)</dt>
+          <dd>Хорошая игра. Обычно говорится после игры. Либо обозначает насмешку над вражеской командой.</dd>
+          <dt>GJ (Good Job)</dt>
+          <dd>Хорошая работа.</dd>
+          <dt>GL (Good Luck)</dt>
+          <dd>Пожелание удачи.</dd>
+        </dl>
 
-    <table border="3" bordercolor="red">
-      <caption>Активность по дням</caption>
-      <tr>
-        <th>День недели</th>
-        <th>Количество минут на катку в среднем</th>
-        <th>Количество каток</th>
-      </tr>
-      <tr>
-        <th>Понедельник</th>
-        <th>33</th>
-        <th>3</th>
-      </tr>
-      <tr>
-        <th>Вторник</th>
-        <th>45</th>
-        <th>2</th>
-      </tr>
-      <tr>
-        <th>Среда</th>
-        <th>24</th>
-        <th>5</th>
-      </tr>
-      <tr>
-        <th>Четверг</th>
-        <th>40</th>
-        <th>2</th>
-      </tr>
-      <tr>
-        <th>Пятница</th>
-        <th>25</th>
-        <th>5</th>
-      </tr>
-      <tr>
-        <th>Суббота</th>
-        <th>34</th>
-        <th>6</th>
-      </tr>
-      <tr>
-        <th>Воскресенье</th>
-        <th>27</th>
-        <th>3</th>
-      </tr>
-      <tr>
-        <th>Суммарно:</th>
-        <th>29</th>
-        <th>4</th>
-      </tr>
-    </table>
-    <h2>Коротко о дотерском сленге</h2>
-    <dl>
-      <dt>Frag (Килл, Фраг)</dt>
-      <dd>Очко за убийство вражеского героя.</dd>
-      <dt>Frag Stealing/Kill Stealing (Фраг/килл стилинг, steal/стил)</dt>
-      <dd>Добивание героя противника с явным намерением украсть фраг у союзника, имеющего возможность убить этого же героя.</dd>
-      <dt>Gank (Ганк) - Go around ANd Kill</dt>
-      <dd>Объединение нескольких героев для быстрого и неожиданного убийства одного или нескольких героев.</dd>
-      <dt>Ganker (Ганкер)</dt>
-      <dd>Герой, который эффективно используется в ганках.</dd>
-      <dt>GG (Good Game)</dt>
-      <dd>Хорошая игра. Обычно говорится после игры. Либо обозначает насмешку над вражеской командой.</dd>
-      <dt>GJ (Good Job)</dt>
-      <dd>Хорошая работа.</dd>
-      <dt>GL (Good Luck)</dt>
-      <dd>Пожелание удачи.</dd>
-    </dl>
-
-    <a href="javascript:scroll(0,0)">
-      <img src="images/ava/arrow.png" height="50" title="Наверх страницы" />
-    </a>
-    <a name="bottom" />
-  </font>
+        <a href="javascript:scroll(0,0)">
+          <img src="images/ava/arrow.png" height="50" title="Наверх страницы" />
+        </a>
+        <a name="bottom" />
+      </td>
+      <td class="info">
+        <!-- info -->
+        <img src="images/ava/avatarAsuna.jpg" height="100" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10"
+          border="1" />
+        <img src="images/ava/avatar.jpg" width="80%" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10" border="1"
+        />
+        <img src="images/ava/avatar.jpg" width="50%" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10" border="1"
+        />
+        <h1>Асуна-молния</h1>
+        <b>Доля Побед: 55%</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" class="footer">&copy; Все права защищены</td>
+    </tr>
+  </table>
 </body>
 
 </html>
