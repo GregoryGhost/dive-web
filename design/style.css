@@ -1,0 +1,143 @@
+table.main {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+td.top {
+    background-image: url("images/backgrounds/Fire.png");
+    height: 165px;
+}
+
+td.logo {
+    width: 100%;
+    text-align: right;
+    padding-top: 55px;
+    padding-right: 55px;
+}
+
+td.search {}
+
+td.topmenu {
+    background-color: #3f3e3e;
+}
+
+td.news {
+    width: 30%;
+    padding-right: 6px;
+}
+
+td.text {
+    width: 70%; 
+    height: 100%;
+}
+
+td.copyright {
+    padding-right: 5px;
+    height: 32px;
+}
+
+td.bottommenu {
+    background-image: url(bottom_bg.jpg);
+    background-color: #ff8e51;
+    height: 32px;
+}
+
+html, body {
+    margin: 0px; 
+    padding:0px;
+}
+
+td {
+    padding: 0px;
+}
+
+body, input, select, textarea {
+    background-color: #ffffff;
+}
+td, input, select, textarea {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #000000;
+    vertical-align: top;
+}
+
+td.hdr {
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    background-color: #db0000; 
+    padding-left: 21px;
+}
+
+td.menuitem {
+    vertical-align: middle;
+    text-align: center;
+    width: 20%;
+    background-image: url(menuitem_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+a.menu {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+td.crightitem {
+    border-top: 1px solid #cacaca;
+    background-color: #f5f5f5;
+    font-size: 10px;
+    color: #656565;
+    vertical-align: middle;
+    text-align: center;
+}
+
+td.btmenuitem {
+    background-image: url(bottom_shadow.jpg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.news-table {
+    width: 100%;
+}
+
+td.news-item {
+    background-image: url(news-item_bg.jpg);
+    background-repeat: repeat-x;
+    border: 1px solid silver;
+    padding: 10px;
+    text-align: justify;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c63c3c;
+    margin-bottom: 7px;
+}
+
+a {
+    text-decoration: none;
+    color: #c63c3c;
+}
+
+table.hdrtab {
+    background-image: url(hdrtab_bg.jpg);
+    background-color: #dce1e9;
+    height: 37px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.content {
+    border-collapse: collapse;
+    margin: 6px 8px 8px 12px;
+}
