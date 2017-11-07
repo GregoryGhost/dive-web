@@ -4,53 +4,8 @@
 <head>
   <title>Асуна-молния - Активность в Dota 2</title>
   <base target="_blank" />
-  <style type="text/css">
-    .header {
-      width: 100%;
-      height: 60px;
-      /* background-color: #717dc9; */
-      background-image: linear-gradient( rgba(83, 196, 248, 0.45),
-      rgba(5, 75, 253, 0.836)),
-      url("images/backgrounds/Fire.png");
-      background-size: contain;
-      background-repeat: repeat;
-      padding: 20px;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      color: rgb(3, 3, 163);
-    }
-
-    .main_menu {
-      width: 120px;
-      height: 460px;
-      background-color: #9900ff;
-      padding: 15px;
-      vertical-align: top;
-    }
-
-    .content {
-      width: 500px;
-      background-color: rgb(26, 63, 163);
-      padding: 15px;
-      vertical-align: top;
-    }
-
-    .info {
-      width: 120px;
-      background-color: #5f2991;
-      padding: 15px;
-      vertical-align: top;
-      color: darkorange;
-    }
-
-    .footer {
-      width: 100%;
-      padding: 10px 0 10px 20px;
-      background-image: linear-gradient(rgba(0, 69, 243, 0.836), rgba(83, 196, 248, 0.45));
-      font-size: 13px;
-      text-align: center;
-    }
-  </style>
+  <link href="design/tablesheet.css"  rel="stylesheet" type="text/css" />
+  <link href="design/table.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body bgcolor="#2F4F4F" text="white" link="snow" alink="white" vlink="red">
@@ -65,61 +20,68 @@
       <td class="main_menu">
         <!-- main_menu -->
         <a href="index.html">Обзор</a>
+        <br>
         <a href="matches.html">Матчи</a>
+        <br>
         <a href="twitch.html">Любимые стримы</a>
+        <br>
         <a href="hero_records.html">Рекорды</a>
+        <br>
         <a href="things.html">Предметы</a>
+        <br>
         <a href="stata.html">Статистика</a>
+        <br>
         <a href="active.html">Активность</a>
+        <br>
       </td>
       <td class="content">
         <!-- content -->
-        <table border="3" bordercolor="red">
-          <caption>Активность по дням</caption>
+        <table class="data">
+          <caption class="data-item">Активность по дням</caption>
           <tr>
-            <th>День недели</th>
-            <th>Количество минут на катку в среднем</th>
-            <th>Количество каток</th>
+            <th class="data-item">День недели</th>
+            <th class="data-item">Количество минут на катку в среднем</th>
+            <th class="data-item">Количество каток</th>
           </tr>
           <tr>
-            <th>Понедельник</th>
-            <th>33</th>
-            <th>3</th>
+            <td class="data-item">Понедельник</td>
+            <td class="data-item">33</td>
+            <td class="data-item">3</td>
           </tr>
           <tr>
-            <th>Вторник</th>
-            <th>45</th>
-            <th>2</th>
+            <td class="data-item">Вторник</td>
+            <td class="data-item">45</td>
+            <td class="data-item">2</td>
           </tr>
           <tr>
-            <th>Среда</th>
-            <th>24</th>
-            <th>5</th>
+            <td class="data-item">Среда</td>
+            <td class="data-item">24</td>
+            <td class="data-item">5</td>
           </tr>
           <tr>
-            <th>Четверг</th>
-            <th>40</th>
-            <th>2</th>
+            <td class="data-item">Четверг</td>
+            <td class="data-item">40</td>
+            <td class="data-item">2</td>
           </tr>
           <tr>
-            <th>Пятница</th>
-            <th>25</th>
-            <th>5</th>
+            <td class="data-item">Пятница</td>
+            <td class="data-item">25</td>
+            <td class="data-item">5</td>
           </tr>
           <tr>
-            <th>Суббота</th>
-            <th>34</th>
-            <th>6</th>
+            <td class="data-item">Суббота</td>
+            <td class="data-item">34</td>
+            <td class="data-item">6</td>
           </tr>
           <tr>
-            <th>Воскресенье</th>
-            <th>27</th>
-            <th>3</th>
+            <td class="data-item">Воскресенье</td>
+            <td class="data-item">27</td>
+            <td class="data-item">3</td>
           </tr>
           <tr>
-            <th>Суммарно:</th>
-            <th>29</th>
-            <th>4</th>
+            <td class="data-item" style="font-weight: bold; color: #eeff00;">Суммарно:</td>
+            <td class="data-item" style="font-style: italic; color: #eeff00;">29</td>
+            <td class="data-item" style="font-style: italic; color: #eeff00;">4</td>
           </tr>
         </table>
         <h2>Коротко о дотерском сленге</h2>
@@ -147,6 +109,7 @@
       </td>
       <td class="info">
         <!-- info -->
+        <h1>Обзор профиля:</h1>
         <img src="images/ava/avatarAsuna.jpg" height="100" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10"
           border="1" />
         <img src="images/ava/avatar.jpg" width="80%" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10" border="1"
@@ -154,6 +117,7 @@
         <img src="images/ava/avatar.jpg" width="50%" title="Асуна-молния" alt="Avatar" align="left" hspace="10" vspace="10" border="1"
         />
         <h1>Асуна-молния</h1>
+        <br>
         <b>Доля Побед: 55%</b>
       </td>
     </tr>
