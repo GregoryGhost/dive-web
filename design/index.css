@@ -6,30 +6,36 @@
 
 body {
     padding: 2% 0 0;
-    background: rgb(160, 24, 24);
-    color: #333333;
+    background: #2F4F4F;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 #container {
-    width: 760px;
+    width: 750px;
     margin: 0 auto;
     border: 1px solid #999
 }
 
 #header {
-    background: url(images/backgrounds/dota2heroesbanner.jpg) no-repeat;
-    width: 760px;
-    height: 158px;
+    background: url("../images/backgrounds/dota2heroesbanner.jpg") no-repeat;
+    width: 750px;
+    height: 250px;
+}
+
+#header h1 {
+    color: rgb(0, 255, 234);
+    text-align: center;
 }
 
 #nav {
-    background: url(images/backgrounds/Fire.png) repeat-x;
+    background: #5f2991;
     color: #f00;
     font-size: 80%;
     font-weight: bold;
     line-height: 1.8em;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #nav ul {
@@ -42,7 +48,7 @@ body {
 }
 
 #nav li a {
-    color: #000000;
+    color: white;
 }
 
 #nav li a:hover {
@@ -56,7 +62,7 @@ a {
 #text {
     width: 545px;
     font-size: .8em;
-    color: #333;
+    color: snow;
     margin: 10px auto;
     float: left;
 }
@@ -65,7 +71,8 @@ a {
     text-align: justify;
     text-indent: 1.5em;
     margin: 0;
-    padding: 0 15px;
+    padding: 15px 15px;
+    line-height: 1.5;
 }
 
 #text a {
@@ -77,9 +84,20 @@ a {
     border-bottom: #f36 dotted 8px;
 }
 
+#text ol {
+    margin-left: 15px;
+}
+
+#text h2,
+#text h3 {
+    color: #f60;
+    text-align: center;
+    line-height: 2.5;
+}
+
 .img1 {
     width: 200px;
-    height: 287px;
+    height: 87px;
     margin: 0 0 0 15px;
     float: right;
 }
@@ -87,67 +105,29 @@ a {
 .img2 {
     width: 200px;
     height: 200px;
-    margin: 10px 15px 0 15px;
+    margin: 10px 15px;
     float: left;
 }
 
-.poloska {
-    width: 300px;
-    height: 23px;
-    margin: 10px 10px 0 15px;
-    float: left;
-}
-
-#members {
-    width: 300px;
-    height: 100px;
-    float: right;
-}
-
-#members h2 {
-    color: #f60;
-    font-size: 120%;
-    font-weight: bold;
-    text-align: center;
-}
-
-#members ol {
-    color: #999;
-    font-size: 120%;
-    margin: 10px;
-    float: left;
-    list-style-type: none;
-}
-
-#members li {
-    margin: 0 5px;
-}
-
-#members li a {
-    color: #0066CC;
-}
-
-#members li a:hover {
-    color: #0066CC;
+.avatar {
+    width: 150px;
+    height: 150px;
 }
 
 #news {
-    background: #ffc;
+    background: #013bfa;
     width: 185px;
-    color: #665;
+    color: snow;
     margin: 10px 5px;
     float: right;
 }
 
 #news h3 {
+    background-color: #0004db;
     color: #f60;
     font-size: 120%;
     font-weight: bold;
     text-align: center;
-}
-
-#news ul {
-    list-style: url(Pic/marker.jpg) inside;
 }
 
 #news li {
@@ -155,12 +135,17 @@ a {
     padding: 5px 10px;
 }
 
+#news ul {
+    list-style-type: none;
+}
+
 #footer {
-    background: #0066CC;
-    color: #fff;
+    background: #5f2991;
+    color: white;
     font-size: 70%;
     padding: 5px;
     clear: both;
+    text-transform: uppercase;
 }
 
 #footer a {
