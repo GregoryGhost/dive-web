@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    padding: 2% 0 0;
+    background: #2F4F4F;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    width: 750px;
+    margin: 0 auto;
+    border: 1px solid #999
+}
+
+#header {
+    background: url("../images/backgrounds/dota2heroesbanner.jpg") no-repeat;
+    width: 750px;
+    height: 250px;
+}
+
+#header h1 {
+    color: rgb(0, 255, 234);
+    text-align: center;
+}
+
+#nav {
+    background: #5f2991;
+    color: #f00;
+    font-size: 80%;
+    font-weight: bold;
+    line-height: 1.8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#nav ul {
+    list-style-type: none;
+}
+
+#nav li {
+    display: inline;
+    margin: 0 8px;
+}
+
+#nav li a {
+    color: white;
+}
+
+#nav li a:hover {
+    color: #f00;
+}
+
+a {
+    text-decoration: none;
+}
+
+#text {
+    width: 545px;
+    font-size: .8em;
+    color: snow;
+    margin: 10px auto;
+    float: left;
+}
+
+#text p {
+    text-align: justify;
+    text-indent: 1.5em;
+    margin: 0;
+    padding: 15px 15px;
+    line-height: 1.5;
+}
+
+#text a {
+    color: #396;
+}
+
+#text a:hover {
+    color: #f36;
+    border-bottom: #f36 dotted 8px;
+}
+
+#text ol {
+    margin-left: 15px;
+}
+
+#text h2,
+#text h3 {
+    color: #f60;
+    text-align: center;
+    line-height: 2.5;
+}
+
+.img1 {
+    width: 200px;
+    height: 87px;
+    margin: 0 0 0 15px;
+    float: right;
+}
+
+.img2 {
+    width: 200px;
+    height: 200px;
+    margin: 10px 15px;
+    float: left;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+}
+
+#news {
+    background: #013bfa;
+    width: 185px;
+    color: snow;
+    margin: 10px 5px;
+    float: right;
+}
+
+#news h3 {
+    background-color: #0004db;
+    color: #f60;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#news li {
+    font-size: 75%;
+    padding: 5px 10px;
+}
+
+#news ul {
+    list-style-type: none;
+}
+
+#footer {
+    background: #5f2991;
+    color: white;
+    font-size: 70%;
+    padding: 5px;
+    clear: both;
+    text-transform: uppercase;
+}
+
+#footer a {
+    color: #ff0;
+}
+
+#footer a:hover {
+    color: #f00;
+}
+
+#footer p {
+    padding: 2px;
+    text-align: center;
+}
+
+.clearfloat {
+    clear: both;
+}

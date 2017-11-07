@@ -1,0 +1,40 @@
+table.data {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th.data-item,
+caption.data-item {
+    font-weight: bold;
+}
+
+.title{
+    color: #cacaca !important;
+}
+
+th.data-item,
+td.data-item,
+caption.data-item {
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+}
+
+td.data-item img {
+    height: 50%;
+    align-content: center;
+    margin: 1%;
+}
+
+table.data tr {
+    background-color: #3f5858;
+}
+
+table.data tr:nth-child(2n) {
+    background-color: rgb(50, 70, 70);
+}
+
+font.nameHero {
+    color: yellowgreen;
+    vertical-align: top;
+}
