@@ -4,6 +4,7 @@
 <head>
   <title>Асуна-молния - Матчи в Dota 2</title>
   <link href="design/tablesheet.css" rel="stylesheet" type="text/css" />
+  <script src="jsScripts/time.js" type="text/javascript"></script>
 </head>
 
 <body link="snow" alink="white" vlink="red">
@@ -51,6 +52,11 @@
         />
         <h1>Асуна-молния</h1>
         <b>Доля Побед: 55%</b>
+        <h1>Текущее время</h1>
+        <form name="form1">
+          <!--Вывод времени при нажатии на кнопку в кнопку-->
+          <input type="button" name="getTimeButton" value="Time button in button" onClick="form1.getTimeButton.value=`Time: ${(new nTime()).getTime()}`;">
+        </form>
       </td>
     </tr>
     <tr>

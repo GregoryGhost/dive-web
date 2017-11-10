@@ -4,11 +4,18 @@
 <head>
   <title>Асуна-молния - Активность в Dota 2</title>
   <base target="_blank" />
-  <link href="design/tablesheet.css"  rel="stylesheet" type="text/css" />
+  <link href="design/tablesheet.css" rel="stylesheet" type="text/css" />
   <link href="design/table.css" rel="stylesheet" type="text/css" />
+  <link href="design/clock.css" rel="stylesheet" type="text/css" />
+  <script src="jsScripts/time.js" type="text/javascript"></script>
+  <script lang="javascript">
+    function setHandlers() {
+      runSetTimeToImgs();
+    }
+  </script>
 </head>
 
-<body bgcolor="#2F4F4F" text="white" link="snow" alink="white" vlink="red">
+<body onload="setHandlers()" bgcolor="#2F4F4F" text="white" link="snow" alink="white" vlink="red">
   <table cellpadding="0" cellspacing="0" width="100%" align="center">
     <tr>
       <td colspan="3" class="header">
@@ -101,7 +108,17 @@
           <dt>GL (Good Luck)</dt>
           <dd>Пожелание удачи.</dd>
         </dl>
-
+        <h2>Текущее время</h2>
+        <p>
+          <img id="h1" class="clock" src="images/clock/zero.jpg">
+          <img id="h2" class="clock" src="images/clock/zero.jpg">
+          <span class="dot">:</span>
+          <img id="m1" class="clock" src="images/clock/zero.jpg">
+          <img id="m2" class="clock" src="images/clock/zero.jpg">
+          <span class="dot">:</span>
+          <img id="s1" class="clock" src="images/clock/zero.jpg">
+          <img id="s2" class="clock" src="images/clock/zero.jpg">
+        </p>
         <a href="javascript:scroll(0,0)">
           <img src="images/ava/arrow.png" height="50" title="Наверх страницы" />
         </a>
