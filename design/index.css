@@ -47,13 +47,13 @@ body {
     margin: 0 8px;
 }
 
-#nav li a {
+/* #nav li a {
     color: white;
-}
+} */
 
-#nav li a:hover {
+/* #nav li a:hover {
     color: #f00;
-}
+} */
 
 a {
     text-decoration: none;
@@ -139,6 +139,14 @@ a {
     list-style-type: none;
 }
 
+/* #news a {
+    color: snow;
+}
+
+#news a:hover {
+    color: #f60;
+} */
+
 #footer {
     background: #5f2991;
     color: white;
@@ -163,4 +171,12 @@ a {
 
 .clearfloat {
     clear: both;
+}
+
+.selected {
+    color: #d5fa01;
+}
+
+.item {
+    color: snow;
 }
