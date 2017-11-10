@@ -97,7 +97,7 @@ td.crightitem {
 }
 
 td.btmenuitem {
-    background-image: url(bottom_shadow.jpg);
+
     background-repeat: no-repeat;
     vertical-align: middle;
     text-align: center;
@@ -108,7 +108,6 @@ table.news-table {
 }
 
 td.news-item {
-    background-image: url(news-item_bg.jpg);
     background-repeat: repeat-x;
     border: 1px solid silver;
     padding: 10px;
@@ -130,7 +129,6 @@ a {
 }
 
 table.hdrtab {
-    background-image: url(hdrtab_bg.jpg);
     background-color: #dce1e9;
     height: 37px;
     width: 100%;
