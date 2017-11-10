@@ -1,4 +1,4 @@
-function check() {
+function setHandlerForMenus() {
     function setElementStyle(elementDomParent, elementTarget) {
         var nav = document.getElementById(elementDomParent);
         var menus = nav.getElementsByTagName(elementTarget);
