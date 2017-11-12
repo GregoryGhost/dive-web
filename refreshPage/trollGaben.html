@@ -10,8 +10,11 @@
     <script src="../jsScripts/time.js" type="text/javascript"></script>
     <script language="javascript">
         _t = 0;
+
         function genSeq() {
-            return new Array(5).join().replace(/(.|$)/g, function () { return ((Math.random() * 36) | 0).toString(36); });
+            return new Array(5).join().replace(/(.|$)/g, function() {
+                return ((Math.random() * 36) | 0).toString(36);
+            });
         }
 
         function calcElemOfSeqs(seq1, seq2) {
@@ -31,6 +34,58 @@
                 "\nВторая последовательность: " + seq2 +
                 "\nКоличество совпадающих элементов = " + calcElemOfSeqs(seq1, seq2));
         }
+
+        function showTreeDOM() {
+            tabBuff = [];
+
+            function tab(level) {
+
+                if (tabBuff[level]) return tabBuff[level];
+
+                var i, res = [];
+
+                for (i = 0; i < level; i++) res.push("&#9472");
+                res.push("&#128561");
+
+                return tabBuff[level] = res.join('');
+            };
+
+            function printTree(root, childProp, nextProp) {
+                var stack = [],
+                    level = 0,
+                    curr = root,
+                    res = [],
+                    type = true;
+
+                while (curr) {
+                    if (type) res.push(tab(level) + curr.tagName);
+
+                    if (type && curr[childProp]) {
+                        type = true;
+                        level++;
+                        stack.push(curr);
+                        curr = curr[childProp];
+                    } else if (curr[nextProp]) {
+                        type = true;
+                        curr = curr[nextProp];
+                    } else {
+                        type = false;
+                        level--;
+                        curr = stack.pop();
+                    }
+                }
+
+                return res.join("<br>");
+            };
+
+            res = printTree(
+                document.documentElement,
+                'firstElementChild',
+                'nextElementSibling'
+            );
+
+            return res;
+        }
     </script>
 </HEAD>
 
@@ -47,8 +102,13 @@
         <input type="button" name="calcElemSeq" value="Посчитать" onclick="calcSeqs();">
         <input type="button" name="getDayAfterStartMonth" value="Дни с начала месяца" onclick="alert('Прошло дней с начала месяца: '+(new Date).getDate());">
         <a href="http://www.yahoo.com" onmouseover="window.status=document.title; return true;" onmouseout="window.status=''; return true;">Yahoo!</a>
-        <a href="http://www.yahoo.com" onmouseover="window.status='Привет пользователь'+navigator.userAgent; return true;" onmouseout="window.status=`Не скучаете у нас на ${document.URL} ?`; return true;"
-            onclick="alert(`Уже уходите? Сейчас только ${(new nTime()).getTime()}`);">Гиперссылка %)</a>
+        <a href="http://www.yahoo.com" onmouseover="window.status='Привет пользователь'+navigator.userAgent; return true;" onmouseout="window.status=`Не скучаете у нас на ${document.URL} ?`; return true;" onclick="alert(`Уже уходите? Сейчас только ${(new nTime()).getTime()}`);">Гиперссылка %)</a>
+	<h1>Ниже вроде как список</h1>
+	<ul>
+		<li>Как бы пункт 1</li>
+		<li>Как бы пункт 2</li>
+	</ul>
+        <div id="show" onclick="this.innerHTML=showTreeDOM();">Показать дерево DOM страницы &#128562</div>
     </form>
 </body>
 
