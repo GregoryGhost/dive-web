@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Testing JQuery</title>
+    <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript"></script>
+    <link href="../../design/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../design/form.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var _hidden = false;
+            $("#slideShow").click(function() {
+                if (_hidden) {
+                    // показать, сдвинув на сто вниз
+                    $("img:even").each(function() {
+                        var old_top = parseInt($(this).css("top"));
+                        var new_top = old_top - 100;
+                        $(this).animate({
+                            top: new_top
+                        }, "slow");
+                    });
+                    _hidden = false;
+                } else {
+                    // спрятать, сдвинув на сто вверх
+                    $("img:even").each(function() {
+                        var old_top = parseInt($(this).css("top"));
+                        var new_top = old_top + 100;
+                        $(this).animate({
+                            top: new_top
+                        }, "slow");
+                    });
+                    _hidden = true;
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="text">
+            <h1>Индивидуальное задание №4</h1>
+            <h2>Анимация картинок с эффектом слайд-шоу</h2>
+            <button id="slideShow">Click me</button><br>
+            <!--z-index выставлен чтобы движущиеся картинки прятались под статичными-->
+            <img src="../../images/heros/riki.jpg" style="position:absolute;left: 20; top: 150;" /><br>
+            <img src="../../images/heros/clinkz.jpg" style="position:absolute;left: 20; top: 250; z-index: 2" /><br>
+            <img src="../../images/heros/juger.jpg" style="position:absolute;left: 20; top: 350; " /><br>
+            <img src="../../images/heros/sniper.jpg" style="position:absolute;left: 20; top: 450;z-index: 2" /><br>
+            <img src="../../images/heros/seeka.jpg" style="position:absolute;left: 20; top: 550; " /><br>
+            <img src="../../images/heros/riki.jpg" style="position:absolute;left: 20; top:650;z-index: 2" /><br>
+        </div>
+    </div>
+</body>
+
+</html>

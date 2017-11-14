@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Testing JQuery</title>
+    <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript"></script>
+    <link href="../../design/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../design/form.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#bscenter").click(() => {
+                $("*").each(function() {
+                    if ($(this).attr("align") == "center")
+                        $(this).show();
+                });
+            });
+            $("#bhcenter").click(() => {
+                $("*").each(function() {
+                    if ($(this).attr("align") == "center")
+                        $(this).hide();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="text">
+            <h1>Индивидуальное задание № 1</h1>
+            <p align="justify">Original content, выравнивание по ширине</p>
+            <p align="center">Данный текст выранен по центру.</p>
+            <ul>
+                <li align="center">Строка по центру</li>
+                <li align="justify">Строка по ширине</li>
+            </ul>
+            <p align="right">Original content, выравнивание по правому краю</p>
+            <button id="bhcenter">Скрыть</button>
+            <button id="bscenter">Показать</button>
+        </div>
+    </div>
+</body>
+
+</html>
