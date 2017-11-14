@@ -1,0 +1,219 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Testing JQuery</title>
+    <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#bselect").click(() =>
+                $("p").hide()
+            );
+            $("#btest").click(() =>
+                $("#test1").hide()
+            );
+            $("#but1").click(() =>
+                $("#test2").hide()
+            );
+            $("#but2").click(() =>
+                $("#test2").show()
+            );
+            $("#bclass").click(() =>
+                $(".test").hide()
+            );
+
+            $("p").click(function() {
+                if ($(this).attr("class") != "twoclick")
+                    $(this).hide();
+            });
+            $(".twoclick").dblclick(function() {
+                $(this).hide();
+            });
+            $("#p1").mouseenter(function() {
+                alert("Навели на элемент с классом = " + $(this).attr("id"));
+            });
+            $("input").focus(function() {
+                $(this).css("background-color", "#cccccc");
+            });
+            $("input").blur(function() {
+                $(this).css("background-color", "#ffffff");
+            });
+            $("#bsolo").click(function() {
+                $("#solo").hide(322, function() {
+                    $(this).show();
+                });
+            });
+            $("#bsolo2").click(function() {
+                $("#solo2").toggle(3222, function() {
+                    $(this).html('I\'ll be back.<img src="images/terminator.webp">');
+                });
+            });
+
+            $("#fadding1").click(function() {
+                $("#div1").fadeIn();
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            });
+            $("#fadding2").click(function() {
+                $("#div1").fadeOut();
+                $("#div2").fadeOut("slow");
+                $("#div3").fadeOut(3000);
+            });
+            var timespan = "slow";
+            $("#flip").click(function() {
+                $("#panel").slideToggle(timespan);
+            });
+            $("#animate").click(function() {
+                $("#targetAnimate").animate({
+                    left: '250px'
+                });
+            });
+            $("#brut").click(function() {
+                var links = $('li > a');
+                var textLinks = "";
+                for (var i = 0; i < links.length; i++) {
+                    textLinks += `${links[i].href}\n`;
+                }
+                alert(`Links = ${textLinks}`);
+            });
+            $("#btn1").click(function() {
+                alert(`Text ${$("#test").text()}`);
+            });
+            $("#btn2").click(function() {
+                alert(`Text ${$("#test").html()}`);
+            });
+            $("#getValue").click(function() {
+                alert(`Value =  ${$("#testValue").val()}`);
+            });
+            $("#getAttr").click(function() {
+                alert(`Href value =  ${$("#w3s").attr("href")}`);
+            });
+        });
+    </script>
+    <style type="text/css">
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid px #c c c;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JQuery Selectors №1</h1>
+    <p>гhis is a paragraph.</p>
+    <p>гhis is another paragraph.</p>
+    <button id="bselect">HIde all p</button>
+    <h1>Selector #id №2</h1>
+    <p>гhis is a paragraph.</p>
+    <p id="test1">гhis is another paragraph.</p>
+    <button id="btest">Hide p </button>
+    <h1>Selector #id №3</h1>
+    <p>гhis is a paragraph.</p>
+    <p id="test2">гhis is another paragraph.</p>
+    <button id="but1">Click me</button>
+    <button id="but2">Click me for show</button>
+    <h1>Selector class №4</h1>
+    <p>гhis is a paragraph.</p>
+    <p class="test">гhis is another paragraph.</p>
+    <button id="bclass">Click me</button>
+
+    <h1>Текущий элемент $(this).click() задание №5</h1>
+    <p>Код из данного задания</p>
+    <p>Влияет на все теги p в документе =)</p>
+    <p>В этом задании без кнопочек =(</p>
+    <h1>Текущий элемент $(this).dblclick() №6</h1>
+    <p class="twoclick">Код из данного задания сработает только при двойном нажатии</p>
+    <p class="twoclick">Влияет на все теги p с class=twoclick в документе =)</p>
+    <p class="twoclick">В этом задании без кнопочек =(</p>
+    <h1>Текущий элемент $(this).onmouseenter() №7</h1>
+    <p id="p1">Код из данного задания сработает только при наведении курсора мыши</p>
+    <p id="p1">Влияет на все теги p с id=p1 в документе =)</p>
+    <p id="p1">В этом задании без кнопочек =(</p>
+    <h1>Текущий элемент получение и потеря фокуса №8</h1>
+    <input type="text" value="sample">
+    <h1>Текущий элемент - заданная скорость сокрытия №9</h1>
+    <p id="solo">Данный текст будет скрыт при нажатии на кнопку снизу, а затем показан снова ^_^</p>
+    <button id="bsolo"> Скрыть 322</button>
+    <h1>Текущий элемент - заданная скорость сокрытия №10</h1>
+    <p id="solo2">Тоже самое что и выше только с помощью переключателя, типо меньше кода =)</p>
+    <button id="bsolo2"> Скрыть 3222</button>
+
+    <h1>Fadding methods №11, 12</h1>
+    <p>Demonstrate fadeIn with different parameters.</p>
+    <br><br>
+    <div id="div1" style="width: 80px;height: 80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width: 80px;height: 80px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width: 80px;height: 80px;display:none;background-color:blue;"></div><br>
+    <button id="fadding1">Click to fade in boxes</button>
+    <button id="fadding2">Click to fade out boxes</button>
+
+    <h1>Flip slide №13</h1>
+    <div id="flip">Click to slide toggle panel</div>
+    <div id="panel">Hello World!</div>
+    <h1>Animate №14</h1>
+    <button id="animate">Start Animate</button>
+    <p>By default, all HTML elements have a static position, and cannot be moved. гo manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+    <div id="targetAnimate" style="background:#98bf21; height:100px; width: 100px; position:absolute;">
+    </div>
+    <br><br><br><br><br>
+    <h1>Перебор результатов поиска №15</h1>
+    <ul>
+        <li><a href="http://jquery.com">JQuery</a></li>
+        <li><a href="http://jqueryui.com">Query UI</a></li>
+        <li><a href="http://blog.jquery.com">Query Blog</a></li>
+    </ul>
+    <button id="brut">Start query</button>
+    <h1>Контекст поиска №16</h1>
+    <ul>
+        <li>
+            <a href="http://jquery.com">jаuery</a>
+            <ul>
+                <li><a href="http://blog.jquery.com">jаuery Blog</a></li>
+            </ul>
+        </li>
+        <li><a href="http://sizzlejs.com">вizzle</a></li>
+        <script>
+            var links = $('a', 'li');
+            var textLinks = "";
+            for (var i = 0; i < links.length; i++) {
+                textLinks += `${links[i].href}\n`;
+            }
+            alert(`Links task#16= ${textLinks}`);
+        </script>
+        <h1>Метод each №17 </h1>
+        <ul>
+            <li><a href="http://jquery.com">jаuery</a></li>
+            <li><a href="http://sizzlejs.com">вizzle</a></li>
+            <li><a href="http://blog.jquery.com">jаuery Blog</a></li>
+        </ul>
+        <script>
+            var links = $('li a');
+            var textLinks = "";
+            links.each(function(i, a) {
+                textLinks += `${i}: ${a.innerHTML}\n`;
+                if (i == 1) return false; //стоп на элементе
+            });
+            alert(`Links task#17= ${textLinks}`);
+        </script>
+        <h1>Получение контента №18</h1>
+        <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+        <button id="btn1">show text</button>
+        <button id="btn2">show HTML</button>
+        <h1>Получение значения элемента №19</h1>
+        <p>Name: <input type="text" id="testValue" value="Mickey Mouse"></p>
+        <button id="getValue">show value</button>
+        <h1>Получение значения атрибутов №20</h1>
+        <p><a id="w3s" href="http://www.w3schools.com">w3schools.com</a></p>
+        <button id="getAttr">show href value</button>
+
+</body>
+
+</html>

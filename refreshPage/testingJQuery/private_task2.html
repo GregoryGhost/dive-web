@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Testing JQuery</title>
+    <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript"></script>
+    <link href="../../design/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../design/form.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#colormusic").keypress(function() {
+                var random_color = '#' + Math.round((Math.random() * (999999 - 100000) + 100000));
+                $(this).css({
+                    'background-color': random_color
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="text">
+            <h1>Индивидуальное задание № 2</h1>
+            <p align="left">"Светомузыка" в инпуте.</p>
+            <input type="text" id="colormusic" placeholder="ЭкспериментыЫ">
+        </div>
+    </div>
+</body>
+
+</html>
