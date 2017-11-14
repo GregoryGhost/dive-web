@@ -8,6 +8,8 @@
     <meta name="copyright" content="Защищено авторскими правами, в случае нарушения пеняйте на себя =).">
     <meta http-equiv="refresh" content="25;../index.html">
     <script src="../jsScripts/time.js" type="text/javascript"></script>
+    <link href="../design/index.css" rel="stylesheet" type="text/css" />
+    <link href="../design/form.css" rel="stylesheet" type="text/css" />
     <script language="javascript">
         _t = 0;
 
@@ -90,26 +92,41 @@
 </HEAD>
 
 <body onload="runTimer(25);">
-    <p id="gotoPage">
-        Если перенаправления не произошло через 25 секунд, то нажмите на Гейба =).
-    </p>
-    <a href="../index.html">
+    <div id="container">
+        <div id="text">
+            <p id="gotoPage">
+                Если перенаправления не произошло через 25 секунд, то нажмите на Гейба =).
+            </p>
+            <a href="../index.html">
         <img src="trollGaben.jpg">
     </a>
-    <h1>Задания из Приложения А. Третья лаба.</h1>
-    <form name="forma8">
-        <!--Прототип заданий по Варианту 8 из Приложения А-->
-        <input type="button" name="calcElemSeq" value="Посчитать" onclick="calcSeqs();">
-        <input type="button" name="getDayAfterStartMonth" value="Дни с начала месяца" onclick="alert('Прошло дней с начала месяца: '+(new Date).getDate());">
-        <a href="http://www.yahoo.com" onmouseover="window.status=document.title; return true;" onmouseout="window.status=''; return true;">Yahoo!</a>
-        <a href="http://www.yahoo.com" onmouseover="window.status='Привет пользователь'+navigator.userAgent; return true;" onmouseout="window.status=`Не скучаете у нас на ${document.URL} ?`; return true;" onclick="alert(`Уже уходите? Сейчас только ${(new nTime()).getTime()}`);">Гиперссылка %)</a>
-	<h1>Ниже вроде как список</h1>
-	<ul>
-		<li>Как бы пункт 1</li>
-		<li>Как бы пункт 2</li>
-	</ul>
-        <div id="show" onclick="this.innerHTML=showTreeDOM();">Показать дерево DOM страницы &#128562</div>
-    </form>
+            <h1>Задания из Приложения А. Третья лаба.</h1>
+            <form name="forma8">
+                <!--Прототип заданий по Варианту 8 из Приложения А-->
+                <input type="button" name="calcElemSeq" value="Посчитать" onclick="calcSeqs();">
+                <input type="button" name="getDayAfterStartMonth" value="Дни с начала месяца" onclick="alert('Прошло дней с начала месяца: '+(new Date).getDate());">
+                <a href="http://www.yahoo.com" onmouseover="window.status=document.title; return true;" onmouseout="window.status=''; return true;">Yahoo!</a>
+                <a href="http://www.yahoo.com" onmouseover="window.status='Привет пользователь'+navigator.userAgent; return true;" onmouseout="window.status=`Не скучаете у нас на ${document.URL} ?`; return true;" onclick="alert(`Уже уходите? Сейчас только ${(new nTime()).getTime()}`);">Гиперссылка %)</a>
+                <h1>Ниже вроде как список</h1>
+                <ul>
+                    <li>Как бы пункт 1</li>
+                    <li>Как бы пункт 2</li>
+                </ul>
+                <div id="show" onclick="this.innerHTML=showTreeDOM();">Показать дерево DOM страницы &#128562</div>
+            </form>
+            <h1>Тестирование работы JQuery</h1>
+            <ul>
+                <li>Индивидуальные задания:</li>
+                <ol>
+                    <li><a href="testingJQuery/private_task1.html">Задание</a></li>
+                    <li><a href="testingJQuery/private_task2.html">Задание</a></li>
+                    <li><a href="testingJQuery/private_task3.html">Задание</a></li>
+                    <li><a href="testingJQuery/private_task4.html">Задание</a></li>
+                </ol>
+                <li><a href="testingJQuery/experiments.html">Эксперименты (задания из лабы)</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </HTML>
