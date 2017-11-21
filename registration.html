@@ -47,7 +47,6 @@
 
         function callInstallHandlerForElements() {
             setHandlerForMenus();
-            giveSpeechToRiki();
         }
     </script>
 </HEAD>
@@ -88,7 +87,7 @@
 <div id="text">
     <h1>Личная информация</h1>
     <h2>Заполните следующие поля</h2>
-    <form name="form1" oninput="heightoutput.value=height.value">
+    <form name="form1" oninput="heightoutput.value=height.value" action="refreshPage/testingPHP+MYSQL/echoPostRegistration.php" method="POST">
         <!--123 ФИО-->
         <label for="firstName">Фамилия:</label>
         <input type="text" id="firstName" name="firstName" pattern="[А-Я]{1}[а-я]{1,50}" placeholder="Кулаков" required><br>
