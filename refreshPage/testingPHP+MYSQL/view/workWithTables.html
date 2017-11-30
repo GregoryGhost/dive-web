@@ -8,12 +8,19 @@
     <link href="../../design/form.css" rel="stylesheet" type="text/css" />
     <script src="../../jsScripts/menu.js" type="text/javascript">
     </script>
+    <style>
+        .registration-table {
+            list-style: none;
+            margin-left: 15px;
+            line-height: 2;
+        }
+    </style>
 </head>
 
 <body onload="setHandlerForMenus();">
     <div id="container">
         <div id="header">
-            <h1>Задания из Приложения А</h1>
+            <h1>Работа с MySQL</h1>
         </div>
         <div id="nav">
             <ul>
@@ -23,44 +30,17 @@
                 <li>
                     <a href="../trollGaben.html">Обзор экспериментов</a>
                 </li>
-                <li>
-                    <a href="AnnexA.php">Задания из Приложения А</a>
-                </li>
             </ul>
         </div>
         <div id="text">
-
-            <h2>Вывод данных переданных методом POST</h2>
-<?PHP
-$classItem = "\"data-item\"";
-print("<table class=\"data\">");
-print("<tr>");
-printf("<th class=%s>%s</th>", $classItem, "Поле");
-printf("<th class=%s>%s</th>", $classItem, "Содержимое");
-print("</tr>");
-foreach($_POST as $key => $value){
-	if(is_array($value) && !empty($value)){
-		$lvalue=count($value);
-		print("<tr>");
-		printf("<td class=%s rowspan=%d>%s</td>", $classItem, $lvalue, $key);
-		printf("<td class=%s>%s</td>", $classItem, $value[0]);
-		print("</tr>");
-		for($i=1; $i<$lvalue; $i++){
-			print("<tr>");
-			printf("<td class=%s>%s</td>", $classItem, $value[$i]);
-			print("</tr>");
-		}
-	}
-	else{
-		print("<tr>");
-		printf("<td class=%s>%s</td>", $classItem, $key);
-		printf("<td class=%s>%s</td>", $classItem, $value);
-		print("</tr>");
-	}
-	print("</tr>");
-}
-print("<table>");
-?>
+            <h2>Пример работы с таблицами из БД</h2>
+            <ul class="registration-table">
+                <li><a href="../../registration.html">Регистрация</a></li>
+                <li><a href="auth.html">Аутентификация</a></li>
+                <li><a href="updateInfoAboutUser.html">Изменить личные данные</a></a>
+                </li>
+                <li><a href="selectFromTables.php">Вывод содержимого таблиц</a></li>
+            </ul>
         </div>
         <div class="clearfloat"></div>
         <div id="footer">

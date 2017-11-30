@@ -27,19 +27,17 @@
                     <a href="AnnexA.php">Задания из Приложения А</a>
                 </li>
             </ul>
-        </div>
-        <div id="text">
-
+        </div>div.my_class
+        <div id="text">a.x
             <h2>Пример работы с БД</h2>
-<?PHP
+            <?PHP
             include "connectToDB.php";
 
-$tablePeople = "people";
-//$query = "INSERT INTO $tablePeople (class, money) VALUES(222, 110.0)";
+$tablePeople = "test";
+//$query = "INSERT INTO $tablePeople (name) VALUES('привет, бро!')";
 //$query = "Select id, class, money from " . $tablePeople;
-$query = "Select id, class, money from " . $tablePeople . " ORDER BY id DESC";
+$query = "Select name from " . $tablePeople;
 $result = mysqli_query($link, $query);
-
 if($result == null){
 	print("В таблице ". $tablePeople . " отсутствуют записи");
 	exit();
@@ -47,15 +45,15 @@ if($result == null){
 
 print("<table class=\"data\">");
 	print("<tr>");
-		printf("<th class=\"data-item\">%s</td>", "Id");
-		printf("<th class=\"data-item\">%s</td>", "Class");
-		printf("<th class=\"data-item\">%s</td>", "Money");
+		printf("<th class=\"data-item\">%s</td>", "Name");
+		//printf("<th class=\"data-item\">%s</td>", "Class");
+		//printf("<th class=\"data-item\">%s</td>", "Money");
 	print("</tr>");
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 	print("<tr>");
-		printf("<td class=\"data-item\">%s</td>",$row["id"]);
-		printf("<td class=\"data-item\">%s</td>", $row["class"]);
-		printf("<td class=\"data-item\">%s</td>", $row["money"]);
+		printf("<td class=\"data-item\">%s</td>",$row["name"]);
+		//printf("<td class=\"data-item\">%s</td>", $row["class"]);
+		//printf("<td class=\"data-item\">%s</td>", $row["money"]);
 	print("</tr>");
 }
 print("</table>");
