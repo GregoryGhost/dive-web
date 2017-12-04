@@ -11,7 +11,7 @@ class User
 
     private $db_host = "localhost";
     private $db_name = "dota_live";
-    private $db_user = "root";
+    private $db_user = "user_dotalive";
     private $db_pass = "qwerty1234";
 
     private $is_authorized = false;
