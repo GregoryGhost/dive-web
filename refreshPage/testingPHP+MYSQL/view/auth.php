@@ -29,7 +29,7 @@
         </div>
         <div id="text">
             <h2>Аутентификация</h2>
-            <form method="post" action="./ajax.php">
+            <form class="ajax" method="post" action="./ajax.php">
                 <div class="main-error"></div>
                 <input name="login" type="text" placeholder="Username" autofocus><br>
                 <input name="password" type="password" placeholder="Password"><br>        

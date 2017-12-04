@@ -56,3 +56,13 @@ input[type=reset] {
     padding: 5px;
     font-size: 16px;
 }
+
+.main-error {
+	background-color: orange;
+	color: #ff0050;
+	font-weight: bold;
+	margin: 10px 10px;
+	padding: 5px;
+	border-radius: 3px;
+	display:none;
+}

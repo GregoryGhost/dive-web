@@ -62,7 +62,8 @@
                 <p><a href="./index.php?redirect=auth">Уже зарегистрированы? Войти в учетную запись.</a></p>
                <!--Проверочка данных перед отправкой -->
                <!-- <form name="form1" oninput="heightoutput.value=height.value" action="./lib/echoPostRegistration.php" method="POST"> -->
-               <form id="formEditProfile" name="formEditProfile" oninput="heightoutput.value=height.value" action="./ajax.php" method="POST">
+               <form class="ajax" id="formEditProfile" name="formEditProfile" oninput="heightoutput.value=height.value" action="./ajax.php" method="POST">
+					<div class="main-error"></div>
                     <fieldset>
                         <legend>Придумайте логин и пароль</legend>
                         <!--Login-->
@@ -80,7 +81,6 @@
 
                     <!--check data-->
                     <!--<input type="submit" name="check" value="Проверить">-->
-                    <div class="main-error alert alert-error hide"></div>
                     <input type="hidden" name="act" value="register">
                     <!-- old variant <input name="hiddenSubmit" type="submit" value="" hidden /> -->
 					<!-- old variant <input id="validOnServer" name="check" type="submit" value="Проверить/Отослать" /> -->
