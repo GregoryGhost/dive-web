@@ -6,39 +6,8 @@
     <link href="../../design/index.css" rel="stylesheet" type="text/css" />
     <link href="../../design/table.css" rel="stylesheet" type="text/css" />
     <link href="../../design/form.css" rel="stylesheet" type="text/css" />
-    <script src="../../jsScripts/menu.js" type="text/javascript">
-    </script>
-    <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript">
-    </script>
-    <script type="text/javascript">
-        $(document).ready(
-            function() {
-                $("#validOnServer").click(() => {
-                    var form = document.querySelector("#formUpdateTable");
-                    if (form.checkValidity()) {
-                        var dataForValid = $("#name").val();
-                        $.ajax({
-                            type: "POST",
-                            url: "updateInfoAboutUser.php",
-                            data: "name=" + dataForValid,
-                            success: function(data) {
-                                $("#valid").html(data);
-                                location.href = "workWithTables.html";
-                            }
-                        });
-                    } else {
-                        document.querySelector('input[type="submit"]').click();
-                    }
-                });
-            });
-    </script>
-    <style>
-        .registration-table {
-            list-style: none;
-            margin-left: 15px;
-            line-height: 2;
-        }
-    </style>
+    <script src="../../jsScripts/menu.js" type="text/javascript" ></script>
+    <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript" ></script>
 </head>
 
 <body onload="setHandlerForMenus();">
@@ -61,6 +30,10 @@
         </div>
         <div id="text">
             <h2>Изменение данных таблицы БД</h2>
+            <form name="formLogOut" method="post" action="./ajax.php">
+				<input type="hidden" name="act" value="logout">
+				<button type="submit">Выйти из аккаунта</button>
+			</form>
             <form id="formUpdateTable" name="formUpdateTable" action="" method="POST">
                 <label for="name">Input data for your name</label>
                 <input id="name" name="name" type="text" pattern="[А-Я]{1}[а-я]{1,50}" placeholder="enter data here" value="" required/>

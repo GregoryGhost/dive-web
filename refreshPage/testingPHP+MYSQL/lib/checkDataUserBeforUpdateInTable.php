@@ -9,7 +9,7 @@ function checkDataOfUser($name){
             $query = "UPDATE $tableUser SET name='$data' WHERE name='Кексик'";
             $result = mysqli_query($link, $query);
             if($result){
-                print("Success update data");
+                print("./view/editProfile.php");
             } else{                                           
                 print("В таблице ". $tableUser . mysqli_error($link));
             }                                           
