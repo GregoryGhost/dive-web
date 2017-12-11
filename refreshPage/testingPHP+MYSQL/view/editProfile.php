@@ -23,14 +23,12 @@
                 <li>
                     <a href="../trollGaben.html">Обзор экспериментов</a>
                 </li>
-                <li>
-                    <a href="workWithTables.html">Работа с MySQL</a>
-                </li>
             </ul>
         </div>
         <div id="text">
-            <h2>Изменение данных таблицы БД</h2>
-            <form name="formLogOut" method="post" action="./ajax.php">
+            <h2>Редактирование учетных данных</h2>
+            <form class="ajax" name="formLogOut" method="post" action="./ajax.php">
+				<div class="main-error"></div>
 				<input type="hidden" name="act" value="logout">
 				<button type="submit">Выйти из аккаунта</button>
 			</form>

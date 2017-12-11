@@ -35,6 +35,23 @@ class User
         return false;
     }
 
+	private function getIdUser($login)
+	{
+		$query = "select id_user from auth_user where login = :login limit 1";
+		$sth = $this->db->prepare($query);
+        $sth->execute(
+                array(
+                    ":login" => $login
+                )
+        );
+
+        $row = $sth->fetch();
+        if (!$row) {
+            return false;
+        }
+        return $row['id_user'];
+    }
+		
     public function passwordHash($password, $salt = null, $iterations = 10)
     {
         $salt || $salt = uniqid();
@@ -47,7 +64,8 @@ class User
         return array('hash' => $hash, 'salt' => $salt);
     }
 
-    public function getSalt($login) {
+    public function getSalt($login) 
+    {
         $query = "select salt from auth_user where login = :login limit 1";
         $sth = $this->db->prepare($query);
         $sth->execute(
@@ -117,7 +135,8 @@ class User
         }
     }
 
-    public function create($login, $password) {
+    public function create($login, $password) 
+    {
         $user_exists = $this->getSalt($login);
 
         if ($user_exists) {
@@ -136,6 +155,55 @@ class User
                     ':login' => $login,
                     ':password' => $hashes['hash'],
                     ':salt' => $hashes['salt'],
+                )
+            );
+            $this->db->commit();
+        } catch (\PDOException $e) {
+            $this->db->rollback();
+            echo "Database error: " . $e->getMessage();
+            die();
+        }
+
+        if (!$result) {
+            $info = $sth->errorInfo();
+            printf("Database error %d %s", $info[1], $info[2]);
+            die();
+        } 
+
+        return $result;
+    }
+    
+    public function createBaseInfo($login, $base_user_info)
+    {
+		$id_user = $this->getIdUser($login);
+		if(!$id_user){
+			//error_log("id_user not found", 0);
+			throw new \Exception("User not found: " . $login, 2);
+			return;
+		}
+		//error_log("runing code away id_user type=" . gettype($id_user), 0);
+		//return;
+        $query = "insert into base_user_info (id_user, firstName, secondName, thirdName, phoneNumber, email, passport, card, birthDay)
+							  values (:id_user, :firstName, :secondName, :thirdName, :phone, :mail, :passport, :card, :birthDay)";
+        $sth = $this->db->prepare($query);
+        
+        
+		$dateBirthDay = strtotime($base_user_info['birthDay'][0]);
+		$dateBirthDay = date("Y-m-d", $dateBirthDay);
+		
+        try {
+            $this->db->beginTransaction();
+            $result = $sth->execute(
+                array(
+					':id_user'		=> intval($id_user),
+                    ':firstName' 	=> $base_user_info['firstName'][0],
+                    ':secondName' 	=> $base_user_info['secondName'][0],
+                    ':thirdName'	=> $base_user_info['thirdName'][0],
+                    ':phone'		=> $base_user_info['phone'][0],
+                    ':mail'			=> $base_user_info['mail'][0],
+                    ':passport'		=> $base_user_info['passport'][0],
+                    ':card'			=> $base_user_info['card'][0],
+                    ':birthDay'		=> $dateBirthDay
                 )
             );
             $this->db->commit();

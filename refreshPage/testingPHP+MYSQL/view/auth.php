@@ -9,7 +9,7 @@
     <link href="../../design/form.css" rel="stylesheet" type="text/css" />
     <script src="../../jsScripts/jquery-3.2.1.js" type="text/javascript" ></script>
     <script src="../../jsScripts/menu.js" type="text/javascript"></script>
-
+    <script src="../../jsScripts/ajax-form.js" type="text/javascript"></script>
 </head>
 
 <body onload="setHandlerForMenus();">
@@ -53,7 +53,6 @@
             </p>
         </div>
     </div>
-        <script src="../../jsScripts/ajax-form.js" type="text/javascript"></script>
 </body>
 
 </html>
