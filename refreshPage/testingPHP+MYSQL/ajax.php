@@ -168,12 +168,12 @@ class AuthorizationAjaxRequest extends AjaxRequest
 		);
 		
 		$dataRequiry = $this->fillDataFromRequest($nameRequiryFields);
-		
+
+//проверяем обязательные данные		
 		if($this->isEmptyField($dataRequiry)){
 			return;
 		}
-
-//проверяем обязательные данные
+		
 		$password1 = $dataRequiry['password1'][0];
 		$password2 = $dataRequiry['password2'][0];		
         if ($password1 !== $password2) {
@@ -185,7 +185,6 @@ class AuthorizationAjaxRequest extends AjaxRequest
 			return;
 		}
 
-//проверяем дополнительные данные
 		$nameAdditionalFields = [
 				"height" 		=> "\d{2,3}",
 				"os"			=> "",
@@ -198,6 +197,7 @@ class AuthorizationAjaxRequest extends AjaxRequest
 		
 		$dataAdditionalRequiry = $this->fillDataFromRequest($nameAdditionalFields);
 		
+//проверяем дополнительные данные
 		if($this->isEmptyField($dataRequiry)){
 			return;
 		}
@@ -220,16 +220,22 @@ class AuthorizationAjaxRequest extends AjaxRequest
             return;
         }
         
-		$this->setFieldError("login", "Обработали все данные по маске, теперь нужно записать все данные по таблицам, если в обязательные таблицы не получилось записать, то запись прекращается");
-        return;
+		//$this->setFieldError("login", "Обработали все данные по маске, теперь нужно записать все данные по таблицам, если в обязательные таблицы не получилось записать, то запись прекращается");
+        //return;
 
 //заносим данные по таблицам
         $user = new Auth\User();
 		$login = $dataRequiry['login'][0];
         try {
-            $new_user_id = $user->create($login, $password1);
-            $base_user_info = $user->createBaseInfo($login, $dataRequiry);
-            $addit_user_info = $user->createAdditInfo($login, $dataAdditionalRequiry);
+            $newUserId = $user->create($login, $password1);
+            if($newUserId){
+				$baseUserInfo = $user->createBaseInfo($login, $dataRequiry);
+				//error_log("tipo fail " . $baseUserInfo , 0);
+				//if($baseUserInfo != null){
+					$additUserInfo = $user->createAdditInfo($login, $dataAdditionalRequiry);
+					//error_log("tipo success" , 0);
+				//}
+			}
         } catch (\Exception $e) {
 			$this->setFieldError("login", $e->getMessage());
             return;

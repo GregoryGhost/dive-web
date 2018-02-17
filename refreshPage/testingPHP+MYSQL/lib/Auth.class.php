@@ -173,7 +173,7 @@ class User
         return $result;
     }
     
-    public function createBaseInfo($login, $base_user_info)
+    public function createBaseInfo($login, $baseUserInfo)
     {
 		$id_user = $this->getIdUser($login);
 		if(!$id_user){
@@ -187,8 +187,7 @@ class User
 							  values (:id_user, :firstName, :secondName, :thirdName, :phone, :mail, :passport, :card, :birthDay)";
         $sth = $this->db->prepare($query);
         
-        
-		$dateBirthDay = strtotime($base_user_info['birthDay'][0]);
+		$dateBirthDay = strtotime($baseUserInfo['birthDay'][0]);
 		$dateBirthDay = date("Y-m-d", $dateBirthDay);
 		
         try {
@@ -196,13 +195,13 @@ class User
             $result = $sth->execute(
                 array(
 					':id_user'		=> intval($id_user),
-                    ':firstName' 	=> $base_user_info['firstName'][0],
-                    ':secondName' 	=> $base_user_info['secondName'][0],
-                    ':thirdName'	=> $base_user_info['thirdName'][0],
-                    ':phone'		=> $base_user_info['phone'][0],
-                    ':mail'			=> $base_user_info['mail'][0],
-                    ':passport'		=> $base_user_info['passport'][0],
-                    ':card'			=> $base_user_info['card'][0],
+                    ':firstName' 	=> $baseUserInfo['firstName'][0],
+                    ':secondName' 	=> $baseUserInfo['secondName'][0],
+                    ':thirdName'	=> $baseUserInfo['thirdName'][0],
+                    ':phone'		=> $baseUserInfo['phone'][0],
+                    ':mail'			=> $baseUserInfo['mail'][0],
+                    ':passport'		=> $baseUserInfo['passport'][0],
+                    ':card'			=> $baseUserInfo['card'][0],
                     ':birthDay'		=> $dateBirthDay
                 )
             );
@@ -221,6 +220,50 @@ class User
 
         return $result;
     }
+    
+    public function createAdditInfo($login, $additUserInfo)
+    {
+		$id_user = $this->getIdUser($login);
+		if(!$id_user){
+			//error_log("id_user not found", 0);
+			throw new \Exception("User not found: " . $login, 2);
+			return;
+		}
+        $query = "insert into additional_user_info 
+									 (id_user, growth_of_user, os, browser, lang_programming, love_paradigm, language, site)
+							  values (:id_user, :growth_of_user, :os, :browser, :lang_programming, :love_paradigm, :language, :site)";
+        $sth = $this->db->prepare($query);
+		
+        try {
+            $this->db->beginTransaction();
+            $result = $sth->execute(
+                array(
+					':id_user'			=> intval($id_user),
+					':growth_of_user' 	=> $additUserInfo['height'][0],
+					':os'				=> "{$additUserInfo['os'][0]}",
+					/*TODO: исправить проблему с параметром браузер - приходит пустым судя по echoPostRegitration.php*/
+					':browser'			=> /*'opera'*/"{$additUserInfo['loveBrowser'][0]}",
+					':lang_programming'	=> "{$additUserInfo['LP'][0]}",
+					':love_paradigm'	=> "{$additUserInfo['P'][0]}",
+					':language'			=> "{$additUserInfo['nativeLang'][0]}",
+					':site'				=> $additUserInfo['site'][0]
+                )
+            );
+            $this->db->commit();
+        } catch (\PDOException $e) {
+            $this->db->rollback();
+            echo "Database error: " . $e->getMessage();
+            die();
+        }
+
+        if (!$result) {
+            $info = $sth->errorInfo();
+            printf("Database error %d %s", $info[1], $info[2]);
+            die();
+        } 
+
+        return $result;
+	}
 
     public function connectdb($db_name, $db_user, $db_pass, $db_host = "localhost")
     {
