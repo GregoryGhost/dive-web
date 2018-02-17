@@ -62,7 +62,7 @@
                 <p><a href="./index.php?redirect=auth">Уже зарегистрированы? Войти в учетную запись.</a></p>
                <!--Проверочка данных перед отправкой -->
                <!-- <form name="form1" oninput="heightoutput.value=height.value" action="./lib/echoPostRegistration.php" method="POST"> -->
-               <form class="ajax" id="formEditProfile" name="formEditProfile" oninput="heightoutput.value=height.value" action="./ajax.php" method="POST">
+               <form class="ajax" id="formEditProfile" name="formEditProfile" oninput="heightoutput.value=height.value" action="./lib/echoPostRegistration.php" method="POST">
 					<div class="main-error"></div>
 					<input type="hidden" name="act" value="register">
                     <fieldset>
