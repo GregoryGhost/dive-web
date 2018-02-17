@@ -1,0 +1,27 @@
+<?PHP
+function checkDataOfUser(){
+include "connectToDB.php";
+$tableUser = "test";
+$data = _POST["name"];
+if(is_string($data)){
+$lengthData = strlen($data);
+if($lengthData > 0 && $lengthData <=50){
+$query = "UPDATE $tableUser SET name=$data where name='привет, бро!'";
+$result = mysqli_query($link, $query);
+if($result == null){
+	print("В таблице ". $tablePeople . " отсутствуют записи");
+	exit();
+}
+}else{
+print("Данные не удовлетворяют требованиям больше нуля и не больше 50");
+}
+}else{
+print("Данные не являются строкой");
+}
+mysqli_close($link);
+mysqli_close($link);
+}
+
+checkDataOfUser();
+
+?>

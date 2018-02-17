@@ -1,9 +1,2 @@
-.clock {
-    width: 100px;
-    height: 150px;
-}
-
-.dot {
-    vertical-align: top;  
-    font-size: 500%;
-}
+.clock { width: 100px; height: 150px; }
+.dot { vertical-align: top; font-size: 500%; }
