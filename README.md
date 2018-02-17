@@ -1,3 +1,3 @@
 # О проекте
 
-Страничка дотера, сделанная на чистом HTML, JavaScript, JQuery, PHP, PHP+MySQL+AJAXw
+Страничка дотера, сделанная на чистом HTML, JavaScript, JQuery, PHP, PHP+MySQL+AJAX
